@@ -10,6 +10,7 @@ namespace Data_Structures
             //SinglyLinkedListTest();
             //DoubleLinkedListTest();
             StackTest();
+            QueueTest();
         }
 
         private static void SinglyLinkedListTest()
@@ -342,6 +343,49 @@ namespace Data_Structures
 
             Console.WriteLine("Stack count is " + myStack.Count);
             Console.WriteLine(myStack.DisplayStackValue());
+        }
+
+        private static void QueueTest()
+        {
+            var myQueue = new Data_Structures.StackAndQueue.Queue<string>();
+
+            myQueue.AddToQueue("First");
+
+            Console.WriteLine("Queue count is " + myQueue.Count);
+            Console.WriteLine(myQueue.DisplayQueueValue());
+
+            myQueue.AddToQueue("Second");
+
+            Console.WriteLine("Queue count is " + myQueue.Count);
+            Console.WriteLine(myQueue.DisplayQueueValue());
+
+            myQueue.AddToQueue("Third");
+            myQueue.AddToQueue("Fourth");
+
+            Console.WriteLine("Queue count is " + myQueue.Count);
+            Console.WriteLine(myQueue.DisplayQueueValue());
+
+            Console.WriteLine("\n\nStart remove from queue\n\n");
+
+            myQueue.RemoveFromQueue();
+
+            Console.WriteLine("Queue count is " + myQueue.Count);
+            Console.WriteLine(myQueue.DisplayQueueValue());
+
+            myQueue.RemoveFromQueue();
+
+            Console.WriteLine("Queue count is " + myQueue.Count);
+            Console.WriteLine(myQueue.DisplayQueueValue());
+
+            myQueue.RemoveFromQueue();
+
+            Console.WriteLine("Queue count is " + myQueue.Count);
+            Console.WriteLine(myQueue.DisplayQueueValue());
+
+            myQueue.RemoveFromQueue();
+
+            Console.WriteLine("Queue count is " + myQueue.Count);
+            Console.WriteLine(myQueue.DisplayQueueValue());
         }
     }
 }
