@@ -1,4 +1,5 @@
 ﻿using Data_Structures.DataStructure;
+using Data_Structures.StackAndQueue;
 
 namespace Data_Structures
 {
@@ -7,7 +8,8 @@ namespace Data_Structures
         static void Main(string[] args)
         {
             //SinglyLinkedListTest();
-            DoubleLinkedListTest();
+            //DoubleLinkedListTest();
+            StackTest();
         }
 
         private static void SinglyLinkedListTest()
@@ -297,6 +299,49 @@ namespace Data_Structures
 
             #endregion
 
+        }
+
+        private static void StackTest()
+        {
+            var myStack = new Data_Structures.StackAndQueue.Stack<string>();
+
+            myStack.AddToStack("First");
+
+            Console.WriteLine("Stack count is " + myStack.Count);
+            Console.WriteLine( myStack.DisplayStackValue());
+
+            myStack.AddToStack("Second");
+
+            Console.WriteLine("Stack count is " + myStack.Count);
+            Console.WriteLine(myStack.DisplayStackValue());
+
+            myStack.AddToStack("Third");
+            myStack.AddToStack("Fourth");
+
+            Console.WriteLine("Stack count is " + myStack.Count);
+            Console.WriteLine(myStack.DisplayStackValue());
+
+            Console.WriteLine("\n\nStart remove from stack\n\n");
+
+            myStack.RemoveFromStack();
+
+            Console.WriteLine("Stack count is " + myStack.Count);
+            Console.WriteLine(myStack.DisplayStackValue());
+
+            myStack.RemoveFromStack();
+
+            Console.WriteLine("Stack count is " + myStack.Count);
+            Console.WriteLine(myStack.DisplayStackValue());
+
+            myStack.RemoveFromStack();
+
+            Console.WriteLine("Stack count is " + myStack.Count);
+            Console.WriteLine(myStack.DisplayStackValue());
+
+            myStack.RemoveFromStack();
+
+            Console.WriteLine("Stack count is " + myStack.Count);
+            Console.WriteLine(myStack.DisplayStackValue());
         }
     }
 }
