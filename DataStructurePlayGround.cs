@@ -1,4 +1,5 @@
-﻿using Data_Structures.DataStructure;
+﻿using Data_Structures.BinarySearchTree;
+using Data_Structures.DataStructure;
 using Data_Structures.StackAndQueue;
 
 namespace Data_Structures
@@ -9,8 +10,10 @@ namespace Data_Structures
         {
             //SinglyLinkedListTest();
             //DoubleLinkedListTest();
-            StackTest();
-            QueueTest();
+            //StackTest();
+            //QueueTest();
+
+            BinarySearchTreeTest();
         }
 
         private static void SinglyLinkedListTest()
@@ -386,6 +389,31 @@ namespace Data_Structures
 
             Console.WriteLine("Queue count is " + myQueue.Count);
             Console.WriteLine(myQueue.DisplayQueueValue());
+        }
+
+        private static void BinarySearchTreeTest()
+        {
+            var newBST = new BinarySearchTreeForNum();
+
+            newBST.Add(22);
+            newBST.Add(80);
+            newBST.Add(40);
+            newBST.Add(16);
+            newBST.Add(99);
+            newBST.Add(3);
+            newBST.Add(15);
+            newBST.Add(-15);
+            newBST.Add(11);
+            newBST.Add(23);
+            newBST.Add(65);
+
+            //newBST.Add(10);
+            //newBST.Add(15);
+            //newBST.Add(2);
+            //newBST.Add(1);
+            //newBST.Add(3);
+            //newBST.Add(11);
+            //newBST.Add(0);
         }
     }
 }
