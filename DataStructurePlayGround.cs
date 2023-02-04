@@ -407,6 +407,8 @@ namespace Data_Structures
             newBST.Add(23);
             newBST.Add(65);
 
+            Console.WriteLine(newBST.Contain(20));
+
             //newBST.Add(10);
             //newBST.Add(15);
             //newBST.Add(2);

@@ -68,6 +68,32 @@ namespace Data_Structures.BinarySearchTree
 
         }
 
+        // To find specific value in BST
+        public bool Contain(decimal value)
+        {
+            if (root == null) return false;
+
+            bool IsContain = false;
+            var currentNode = root;
+
+            while(currentNode != null && IsContain == false)
+            {
+                if(currentNode.Value == value)
+                {
+                    IsContain = true;
+                }
+                else if(currentNode.Value < value)
+                {
+                    currentNode = currentNode.RightNode;
+                }
+                else
+                {
+                    currentNode = currentNode.LeftNode;
+                }
+            }
+
+            return IsContain;
+        }
         public class Node
         {
             public Node(decimal value)
