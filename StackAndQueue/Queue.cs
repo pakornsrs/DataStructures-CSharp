@@ -46,9 +46,11 @@ namespace Data_Structures.StackAndQueue
 
             return true;
         }
-        public bool RemoveFromQueue()
+        public QueueData RemoveFromQueue()
         {
-            if (count == 0) return false;
+            if (count == 0) return null;
+
+            var removal = first;
 
             if (count == 1)
             {
@@ -65,7 +67,7 @@ namespace Data_Structures.StackAndQueue
                 count--;
             }
 
-            return true;
+            return removal;
         }
 
         public string DisplayQueueValue()

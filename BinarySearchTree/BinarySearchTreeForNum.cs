@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data_Structures.StackAndQueue;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,9 +12,12 @@ namespace Data_Structures.BinarySearchTree
         public BinarySearchTreeForNum()
         {
             this.root = null;
+            this.count = 0;
         }
         public Node? Root => root;
+        public int Count => count;
         private Node? root { get; set; }
+        private int count { get; set; }
 
         //To add value to BST
         public bool Add(decimal value)
@@ -24,6 +28,7 @@ namespace Data_Structures.BinarySearchTree
             {
                 Console.WriteLine($"Log : {value} is added as new root.");
                 root = newNode;
+                count++;
                 return true;
             }
             else
@@ -43,6 +48,7 @@ namespace Data_Structures.BinarySearchTree
                         {
                             Console.WriteLine($"Log : {value} is added at the right node of {currentNode.Value}");
                             currentNode.RightNode = newNode;
+                            count++;
                             return true;
                         }
                         else
@@ -56,6 +62,7 @@ namespace Data_Structures.BinarySearchTree
                         {
                             Console.WriteLine($"Log : {value} is added at the left node of {currentNode.Value}");
                             currentNode.LeftNode = newNode;
+                            count++;
                             return true;
                         }
                         else
@@ -94,6 +101,56 @@ namespace Data_Structures.BinarySearchTree
 
             return IsContain;
         }
+
+
+        // Breadth first search (BFS-Algorithm)
+        public decimal[] BreadthFirstSearch()
+        {
+            if (root == null) return new decimal[count];
+            
+            var queue = new Data_Structures.StackAndQueue.Queue<Node>();
+            var data = new decimal[count];
+
+            var currentNode = root;
+            var index = 0;
+
+            queue.AddToQueue(currentNode);
+
+            while(queue.Count != 0)
+            {
+                currentNode = queue.RemoveFromQueue().Value;
+                data[index] = currentNode.Value;
+
+                if(currentNode.LeftNode != null) queue.AddToQueue(currentNode.LeftNode);
+                if(currentNode.RightNode != null) queue.AddToQueue(currentNode.RightNode);
+
+                index++;
+            }
+
+            return data;
+        }
+
+        // Pre Order Depth First 
+        public decimal[] PreOrderDepthFirstSearch()
+        {
+            var data = new List<decimal>();
+            if(root == null) return data.ToArray();
+
+            data = PreOrderDFSHelper(data, root);
+
+            return data.ToArray();
+        }
+
+        public List<decimal> PreOrderDFSHelper(List<decimal> data,Node node)
+        {
+            data.Add(node.Value);
+            if(node.LeftNode != null) PreOrderDFSHelper(data,node.LeftNode);
+            if (node.RightNode != null) PreOrderDFSHelper(data, node.RightNode);
+
+            return data;
+        }
+
+
         public class Node
         {
             public Node(decimal value)

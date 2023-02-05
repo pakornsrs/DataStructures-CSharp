@@ -409,6 +409,14 @@ namespace Data_Structures
 
             Console.WriteLine(newBST.Contain(20));
 
+            Console.WriteLine("\nTest Breadth first search algoritjm\n");
+            var result = newBST.BreadthFirstSearch();
+            Console.WriteLine("[{0}]", string.Join(", ", result));
+
+            Console.WriteLine("\nTest PreOrder Depth First Search\n");
+            var preOrderDFS = newBST.PreOrderDepthFirstSearch();
+            Console.WriteLine("[{0}]", string.Join(", ", preOrderDFS));
+
             //newBST.Add(10);
             //newBST.Add(15);
             //newBST.Add(2);
