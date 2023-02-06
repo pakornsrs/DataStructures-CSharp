@@ -150,6 +150,46 @@ namespace Data_Structures.BinarySearchTree
             return data;
         }
 
+        //Post order Depth First
+        public decimal[] PostOrderDepthFirstSearch()
+        {
+            var data = new List<decimal>();
+            if (root == null) return data.ToArray();
+
+            data = PostOrderDFSHelper(data, root);
+
+            return data.ToArray();
+        }
+        public List<decimal> PostOrderDFSHelper(List<decimal> data, Node node)
+        {
+            if (node.LeftNode != null) PostOrderDFSHelper(data, node.LeftNode);
+            if (node.RightNode != null) PostOrderDFSHelper(data, node.RightNode);
+
+            data.Add(node.Value);
+
+            return data;
+        }
+
+        //In order Depth First
+        public decimal[] InOrderDepthFirstSearch()
+        {
+            var data = new List<decimal>();
+            if (root == null) return data.ToArray();
+
+            data = InOrderDFSHelper(data, root);
+
+            return data.ToArray();
+        }
+
+        public List<decimal> InOrderDFSHelper(List<decimal> data, Node node)
+        {
+            if (node.LeftNode != null) InOrderDFSHelper(data, node.LeftNode);
+            data.Add(node.Value);
+            if (node.RightNode != null) InOrderDFSHelper(data, node.RightNode);
+
+            return data;
+        }
+
 
         public class Node
         {

@@ -417,13 +417,13 @@ namespace Data_Structures
             var preOrderDFS = newBST.PreOrderDepthFirstSearch();
             Console.WriteLine("[{0}]", string.Join(", ", preOrderDFS));
 
-            //newBST.Add(10);
-            //newBST.Add(15);
-            //newBST.Add(2);
-            //newBST.Add(1);
-            //newBST.Add(3);
-            //newBST.Add(11);
-            //newBST.Add(0);
+            Console.WriteLine("\nTest PostOrder Depth First Search\n");
+            var postOrderDFS = newBST.PostOrderDepthFirstSearch();
+            Console.WriteLine("[{0}]", string.Join(", ", postOrderDFS));
+
+            Console.WriteLine("\nTest InOrder Depth First Search\n");
+            var InOrderDFS = newBST.InOrderDepthFirstSearch();
+            Console.WriteLine("[{0}]", string.Join(", ", InOrderDFS));
         }
     }
 }
