@@ -12,8 +12,9 @@ namespace Data_Structures
             //DoubleLinkedListTest();
             //StackTest();
             //QueueTest();
+            //BinarySearchTreeTest();
 
-            BinarySearchTreeTest();
+            BinaryHeapTest();
         }
 
         private static void SinglyLinkedListTest()
@@ -424,6 +425,78 @@ namespace Data_Structures
             Console.WriteLine("\nTest InOrder Depth First Search\n");
             var InOrderDFS = newBST.InOrderDepthFirstSearch();
             Console.WriteLine("[{0}]", string.Join(", ", InOrderDFS));
+        }
+
+        private static void BinaryHeapTest()
+        {
+            var newHeap = new BinaryHeap();
+
+            Console.WriteLine("\ntest Insert to binary heap !\n");
+
+            newHeap.PrintList();
+            newHeap.Insert(15);
+            newHeap.PrintList();
+            newHeap.Insert(10);
+            newHeap.PrintList();
+            newHeap.Insert(30);
+            newHeap.PrintList();
+            newHeap.Insert(22);
+            newHeap.PrintList();
+            newHeap.Insert(28);
+            newHeap.PrintList();
+            newHeap.Insert(8);
+            newHeap.PrintList();
+            newHeap.Insert(25);
+            newHeap.PrintList();
+            newHeap.Insert(35);
+            newHeap.PrintList();
+            newHeap.Insert(40);
+            newHeap.PrintList();
+            newHeap.Insert(12);
+            newHeap.PrintList();
+            newHeap.Insert(19);
+            newHeap.PrintList();
+            newHeap.Insert(13);
+            newHeap.PrintList();
+
+            Console.WriteLine("\ntest ExtractMax from binary heap !\n");
+
+            newHeap.PrintList();
+            newHeap.ExtractMax();
+            newHeap.PrintList();
+            newHeap.ExtractMax();
+            newHeap.PrintList();
+            newHeap.ExtractMax();
+            newHeap.PrintList();
+            newHeap.ExtractMax();
+            newHeap.PrintList();
+            newHeap.ExtractMax();
+            newHeap.PrintList();
+            newHeap.ExtractMax();
+            newHeap.PrintList();
+            newHeap.ExtractMax();
+            newHeap.PrintList();
+            newHeap.ExtractMax();
+            newHeap.PrintList();
+            newHeap.ExtractMax();
+            newHeap.PrintList();
+            newHeap.ExtractMax();
+            newHeap.PrintList();
+            newHeap.ExtractMax();
+            newHeap.PrintList();
+            newHeap.ExtractMax();
+            newHeap.PrintList();
+
+            //newHeap.Insert(10);
+            //newHeap.PrintList();
+            //newHeap.Insert(12);
+            //newHeap.PrintList();
+            //newHeap.Insert(8);
+            //newHeap.PrintList();
+
+            //newHeap.ExtractMax();
+            //newHeap.PrintList();
+
         }
     }
 }
