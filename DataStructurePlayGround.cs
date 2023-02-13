@@ -1,5 +1,6 @@
 ﻿using Data_Structures.BinarySearchTree;
 using Data_Structures.DataStructure;
+using Data_Structures.PriorityQueue;
 using Data_Structures.StackAndQueue;
 
 namespace Data_Structures
@@ -13,8 +14,9 @@ namespace Data_Structures
             //StackTest();
             //QueueTest();
             //BinarySearchTreeTest();
+            //BinaryHeapTest();
 
-            BinaryHeapTest();
+            PriolityQueueTest();
         }
 
         private static void SinglyLinkedListTest()
@@ -313,7 +315,7 @@ namespace Data_Structures
             myStack.AddToStack("First");
 
             Console.WriteLine("Stack count is " + myStack.Count);
-            Console.WriteLine( myStack.DisplayStackValue());
+            Console.WriteLine(myStack.DisplayStackValue());
 
             myStack.AddToStack("Second");
 
@@ -497,6 +499,47 @@ namespace Data_Structures
             //newHeap.ExtractMax();
             //newHeap.PrintList();
 
+        }
+
+        private static void PriolityQueueTest()
+        {
+            var newQueue = new PriolityQueues();
+
+            Console.WriteLine("\ntest Insert to Priority Queue !\n");
+
+            newQueue.Insert(15, 5);
+            newQueue.PrintList();
+            newQueue.Insert(18, 2);
+            newQueue.PrintList();
+            newQueue.Insert(25, 5);
+            newQueue.PrintList();
+            newQueue.Insert(12, 1);
+            newQueue.PrintList();
+            newQueue.Insert(25, 4);
+            newQueue.PrintList();
+            newQueue.Insert(45, 5);
+            newQueue.PrintList();
+            newQueue.Insert(1, 6);
+            newQueue.PrintList();
+            newQueue.Insert(3, 6);
+            newQueue.PrintList();
+
+            Console.WriteLine("\ntest DeQueue from Priority Queue !\n");
+
+            newQueue.DeQueue();
+            newQueue.PrintList();
+            newQueue.DeQueue();
+            newQueue.PrintList();
+            newQueue.DeQueue();
+            newQueue.PrintList();
+            newQueue.DeQueue();
+            newQueue.PrintList();
+            newQueue.DeQueue();
+            newQueue.PrintList();
+            newQueue.DeQueue();
+            newQueue.PrintList();
+            newQueue.DeQueue();
+            newQueue.PrintList();
         }
     }
 }
